@@ -8,49 +8,70 @@ namespace Calculator
 {
 	class Program
 	{
-		static void Main(string[] args)
+		static double Calculate( double arg1, double arg2)
 		{
-			double a1, a2, result;
-			Console.WriteLine("Введите первое число");
-			while (true)
-			{
-				if (double.TryParse(Console.ReadLine(), out a1))
-					break;
-				Console.WriteLine("Введено не число, введите число");
-			}
-			Console.WriteLine("Введите второе число");
-			while (true)
-			{
-				if (double.TryParse(Console.ReadLine(), out a2))
-					break;
-				Console.WriteLine("Введено не число, введите число");
-			}
 			Console.WriteLine("Введите бинаруную операцию");
 			while (true)
 			{
 				switch (Console.ReadLine())
 				{
 					case "*":
-						result = a1*a2;
-						goto End;
+						return arg1 * arg2;
 					case "/":
-						result = a1 / a2;
-						goto End;
+						return arg1 / arg2;
 					case "+":
-						result = a1 + a2;
-						goto End;
+						return arg1 + arg2;
 					case "-":
-						result = a1 - a2;
-						goto End;
+						return arg1 - arg2;
 					default:
 						Console.WriteLine("Введена неизвестная операция. Введите заново.");
 						break;
 				}
 			}
+		}
 
-		End:
-			Console.WriteLine(result);
-			Console.Read();
+		static double getNumber()
+		{
+			double number;
+			while (true)
+			{
+				if (double.TryParse(Console.ReadLine(), out number))
+					break;
+				Console.WriteLine("Введено не число, введите число");
+			}
+			return number;
+		}
+
+		static string nextStep()
+		{
+			while (true)
+			{
+				switch (Console.ReadLine())
+				{
+					case "q":
+						return "q";
+					case "y":
+						return "y";
+					default:
+						break;
+				}
+			}
+		}
+
+		static void Main(string[] args)
+		{
+			while (true)
+			{
+				double num1, num2;
+				Console.WriteLine("Введите первое число");
+				num1 = getNumber();
+				Console.WriteLine("Введите второе число");
+				num2 = getNumber();
+				Console.WriteLine(Calculate(num1, num2));
+				Console.WriteLine("Хотите продолжить ? (y - да/ q - выход)");
+				if (nextStep() == "q")
+					break;
+			}
 		}
 	}
 }
