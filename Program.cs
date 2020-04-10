@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Calculator
 {
@@ -82,12 +78,12 @@ namespace Calculator
 			}
 		}
 
-		static void Main(string[] args)
+		static void Main()
 		{
 			double num1 = 0, num2 = 0, nextArg = 0;
 			while (true)
 			{
-				double result = 0;
+				double result;
 				string next;
 				if (nextArg != 1)
 				{
