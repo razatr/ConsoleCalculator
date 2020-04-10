@@ -26,7 +26,7 @@ namespace Calculator
 			}
 		}
 
-		static double getNumber()
+		static double GetNumber()
 		{
 			double number;
 			while (true)
@@ -38,7 +38,7 @@ namespace Calculator
 			return number;
 		}
 
-		static string nextStep()
+		static string NextStep()
 		{
 			while (true)
 			{
@@ -61,7 +61,7 @@ namespace Calculator
 			}
 		}
 
-		static string numOfNextArg()
+		static string NumOfNextArg()
 		{
 			while (true)
 			{
@@ -88,21 +88,21 @@ namespace Calculator
 				if (nextArg != 1)
 				{
 					Console.WriteLine("Введите первое число");
-					num1 = getNumber();
+					num1 = GetNumber();
 				}
 				if(nextArg != 2)
 				{
 					Console.WriteLine("Введите второе число");
-					num2 = getNumber();
+					num2 = GetNumber();
 				}
 				result = Calculate(num1, num2);
 				Console.WriteLine(result);
 				Console.WriteLine("Хотите продолжить с использованием результата в качестве аргумента?\n(y - да/ n - продолжить с новыми аргументами/ q - выход)");
-				next = nextStep();
+				next = NextStep();
 				if (next == "y")
 				{ 
 					Console.WriteLine("В качестве какого аргумента хотите использовать результат?");
-					next = numOfNextArg();
+					next = NumOfNextArg();
 					if (next == "1")
 					{
 						nextArg = 1;
