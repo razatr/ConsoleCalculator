@@ -101,7 +101,7 @@ namespace Calculator
 				next = NextStep();
 				if (next == "y")
 				{ 
-					Console.WriteLine("В качестве какого аргумента хотите использовать результат?");
+					Console.WriteLine("В качестве какого аргумента хотите использовать результат? (1 / 2)");
 					next = NumOfNextArg();
 					if (next == "1")
 					{
